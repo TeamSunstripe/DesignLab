@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja" target="_blank">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>素敵曜日 - Design Lab - 虹色アイコン</title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+            <style>
+                </style>
+    </head>
+    <style>
+        
+        li {
+            list-style-type : none;
+            background      : linear-gradient(rgba(220,220,255,0.4) 85%, rgba(255,255,255,0.5) 100%);
+            
+            float   : left;
+            cursor  : pointer;
+            padding : 3px 10px;
+        }
+
+        li.icon {
+            background      : linear-gradient(rgba(255,0,0,0.9) 5%,rgba(255,255,0,0.4) 20%,rgba(0,255,0,0.4) 30%,rgba(0,255,255,0.4) 40%,rgba(0,0,255,0.4) 50%,rgba(255,0,255,0.4) 60%,rgba(255,255,255,0.4) 70%,rgba(0,0,0,0.4) 80%,rgba(0,0,0,0.49) 90%, rgba(255,0,0,0.5) 100%);
+
+            list-style-type : none;
+            float   : left;
+            cursor  : pointer;
+            width   : 88px;
+            height  : 88px;
+            padding : 10px 10px;
+            border-top    : 5px solid rgba(200,200,255,0.5);
+            border-bottom : 2px solid rgba(50,50,50,0.4);
+            border-radius : 10px 10px 10px 10px;
+        }
+    
+    a.icon {
+        display : block;
+        padding : 10px 13px;
+        font-size : 15px;
+        text-decoration : none;
+        border-radius   : 5px;
+        position        : relative;
+        top   : 0;
+        color : #FFFFFF;
+        transition : all .4s;
+    }
+    li.icon:first-child {
+        border-radius : 10px 10px 10px 10px;
+    }
+    
+    li.icon:last-child {
+        border-radius : 10px 10px 10px 10px;
+    }
+    
+    li.icon:hover a {
+        top   : 20px;
+        color : #4eacff;
+        background-color: #fff;
+        box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
+        transition : all .4s;
+    }
+    
+    li.icon a:after {
+        display  : block;
+        content  : '';
+        position : absolute;
+        top  : 100%;
+        left : 42%;
+        border-style : solid;
+        border-color : transparent;
+        border-width : 5px 5px 0 5px;
+        transition   : all .4s;
+    }
+    
+    li.icon:hover a:after {
+        border-color : white transparent transparent transparent;
+        transition   : all .4s;
+    }
+    
+    .selected.icon {
+        top   : 20px;
+        color : rgba(200,0,0,0.5);
+        background-color: #fff;
+        box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
+        transition : all .4s;
+    }
+    
+    .selected.icon:after {
+        border-color : white transparent transparent transparent;
+        transition   : all .4s;
+    }
+
+
+    </style>
+    <body>
+        <header>
+            <h1>虹アイコン</h1>
+            <nav class="designMenu">
+                <menu>
+                    <li class="icon"><a class="icon" href="http://sunstripe.main.jp/">HOME</a></li>
+                    <li class="icon"><a class="icon" href="http://sunstripe.main.jp/lab/">素敵曜日</a></li>
+                    <li class="icon"><a class="icon selected" href="./index.html">Design Lab</a></li>
+                    <li class="icon"><a class="icon" href="../CSSLab/index.html">CSSLab</a></li>
+                    <li class="icon"><a class="icon" href="../HTMLLab/index.html">HTMLLab</a></li>
+                    <li class="icon"><a class="icon" href="../PHPLab/index.html">PHPLab</a></li>
+                    <li class="icon"><a class="icon" href="../JavaScriptLab/index.html">JavaScriptLab</a></li>
+                    <li class="icon"><a class="icon" href="../GitMaster/index.html">GitMaster</a></li>
+                </menu>
+            </nav>
+        </header>
+        
+        <footer>
+            <a class="main_menu" href="http://sunstripe.main.jp/">HOME</a> > <a class="main_menu" href="./index.html">素敵曜日 - Design Lab</a> > <a class="main_menu" href="./reference.html">reference</a> > <a class="main_menu" href="./help.html">HELP</a>
+            <div style="clear:both;text-align:center;">
+                
+                &copy; 2011 - <script>
+                    var newDate = new Date();
+                    //年・月・日・曜日を取得する
+                    var year = newDate.getFullYear();
+                    document.write(year);
+                    </script> Team Sun Stripe
+            </div>
+        </footer>
+    </body>
+</html>
