@@ -1,0 +1,28 @@
+* {
+    margin:0 auto;
+    padding:0;
+}
+
+html {
+    width:100%;
+    height:100%;
+    background-color:rgba(200,200,200,0.1);
+}
+
+body {
+    width:210mm;
+    height:297mm;
+    background-color:white;
+}
+
+h1 {
+    text-align:center;
+}
+
+footer {
+    position:fixed;
+    bottom:0px;
+    width:210mm;
+    text-align:center;
+}
+
