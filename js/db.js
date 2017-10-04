@@ -4,6 +4,141 @@ var db = [];
     
     }
 
+/* newsData */
+
+var newsData = [
+                {
+                "startdate":"2017/07/01 12:00:00",
+                "update":"2017/07/01 12:00:00",
+                "title":"サイトリニューアル　ー　index.html　を作成",
+                "url":"./index.html",
+                "subject":"デザインの資料\n<br />デザインについての資料などをまとめて行きます\n",
+                },
+                
+                {
+                "startdate":"2017/07/01 12:00:00",
+                "update":"2017/07/01 12:00:00",
+                "title":"ヘルプ作成　ー　help.html　を作成",
+                "url":"./help.html",
+                "subject":"デザインの資料\n<br />本サイトのヘルプをまとめて行きます\n",
+                },
+                
+                {
+                "startdate":"2017/07/01 12:00:00",
+                "update":"2017/07/01 12:00:00",
+                "title":"リファレンス作成　ー　reference.html　を作成",
+                "url":"./reference.html",
+                "subject":"デザインの資料\n<br />デザインについてのリファレンスをまとめて行きます\n",
+                },
+                
+                {
+                "startdate":"2017/09/01 12:00:00",
+                "update":"2017/09/01 12:00:00",
+                "title":"「フォーム」 - リファレンス作成　ー　form.html　を作成",
+                "url":"./form.html",
+                "subject":"デザインの資料\n<br />「フォーム」- リファレンスをまとめて行きます\n",
+                },
+                
+                {
+                "startdate":"2017/07/01 12:00:00",
+                "update":"2017/07/01 12:00:00",
+                "title":"マイページデザイン　ー　mypage.html　を作成",
+                "url":"./mypage.html",
+                "subject":"デザインの資料\n<br />マイページデザイン\n",
+                },
+                
+                {
+                "startdate":"2017/07/01 12:00:00",
+                "update":"2017/07/01 12:00:00",
+                "title":"求人用デザイン　ー　recruitment.html　を作成",
+                "url":"./recruitment.html",
+                "subject":"デザインの資料\n<br />求人のデザイン\n",
+                },
+                
+                {
+                "startdate":"2017/07/01 12:00:00",
+                "update":"2017/07/01 12:00:00",
+                "title":"アンケート用デザイン　ー　questionnaire.html　を作成",
+                "url":"./questionnaire.html",
+                "subject":"デザインの資料\n<br />アンケートのデザイン\n",
+                },
+                
+                {
+                "startdate":"2017/07/15 00:00:00",
+                "update":"2017/07/15 12:00:00",
+                "title":"虹色のデザイン　ー　nijiicon.html　を作成",
+                "url":"./nijiicon.html",
+                "subject":"デザインの資料\n<br />虹色のデザイン\n",
+                },
+                
+                {
+                "startdate":"2017/09/01 12:00:00",
+                "update":"2017/10/04 17:45:36",
+                "title":"フライヤーデザイン９",
+                "url":"./flayer201709.html",
+                "subject":"デザインの資料\n<br />９月は<a href='http://sunstripe.main.jp/nbiCafe/'>ネクストブレイクアイドルカフェ</a>のイベントで用いることになりました！！！\n",
+                },
+                
+                {
+                "startdate":"2017/09/01 12:00:00",
+                "update":"2017/10/04 17:45:36",
+                "title":"きゃらあげ素敵曜日チャンネルチラシデザイン９",
+                "url":"./karry201709.html",
+                "subject":"デザインの資料\n<br />９月は<a href='http://sunstripe.main.jp/'>きゃらあげ素敵曜日チャンネル</a>のイベントで用いることになりました！！！\n",
+                },
+                
+                {
+                "startdate":"2017/10/01 12:00:00",
+                "update":"2017/10/04 17:45:36",
+                "title":"フライヤーデザイン１０",
+                "url":"./flayer201710.html",
+                "subject":"デザインの資料\n<br />１０月は<a href='http://sunstripe.main.jp/'>きゃらあげ素敵曜日チャンネル</a>のイベントで配布用チラシを作成することになりました！！！\n",
+                },
+                {
+                "startdate":"2017/10/04 12:00:00",
+                "update":"2017/10/04 17:45:36",
+                "title":"記事　ー　article.html　を作成",
+                "url":"./article.html",
+                "subject":"デザインの資料\n<br />記事を投稿していくように改良して行きたいと思います\n",
+                },
+                {
+                "startdate":"2017/10/04 12:00:00",
+                "update":"2017/10/04 17:45:36",
+                "title":"デザイン　ー　design.html　を作成",
+                "url":"./design.html",
+                "subject":"デザインの資料\n<br />デザインの記事をまとめて行きたいと思います\n",
+                },
+                {
+                "startdate":"2017/10/04 12:00:00",
+                "update":"2017/10/04 17:45:36",
+                "title":" ニュースページ作成　ー　news.html　を作成",
+                "url":"./news.html",
+                "subject":"デザインの資料\n<br />ニュース記事をまとめて行きたいと思います\n",
+                },
+                {
+                "startdate":"----/--/-- --:--:--",
+                "update":"----/--/-- --:--:--",
+                "title":"NO DATA",
+                "url":"",
+                "subject":"データがありませんでした。",
+                },
+                
+                ];
+
+function displayNewsData( a ) {
+    var html = "";
+    
+    html += "<div class='" + 'article_box' + "' onclick='openURL(\"" + newsData[ a ].url + "\")'>";
+    html += "<h3>" + newsData[ a ].title + "</h3>";
+    html += "<p>" + newsData[ a ].subject + "</p>";
+    html += "<a href='" + newsData[ a ].url + "'>";
+    html += "<h6 class='" + 'bottom0' + "'>" + "関連記事 : " + newsData[ a ].url  + "<h6 class='" + 'bottom0' + "'>" + newsData[ a ].startdate + "</h6>";
+    html += "</a>";
+    html += "</div>";
+
+    return html;
+}
+
 /* adData */
 
 var adData = [
