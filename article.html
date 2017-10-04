@@ -3,7 +3,9 @@
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="./css/article.css"/>
+    <script type="text/javascript" src="./js/init.js"></script>
+    <script type="text/javascript" src="./js/db.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
     <title>〜　記事一覧 2017年１０月分　〜</title>
     <style>
     a {
@@ -41,55 +43,25 @@
     </style>
 </head>
 
-<script>
-    var articleData = [
-                       {
-                       "title":"フライヤーデザイン９",
-                       "url":"./flayer201709.html",
-                       "subject":"デザインの資料\n<br />９月は<a href='http://sunstripe.main.jp/nbiCafe/'>ネクストブレイクアイドルカフェ</a>のイベントで用いることになりました！！！\n",
-                       },
-                       {
-                       "title":"フライヤーデザイン１０",
-                       "url":"./flayer201710.html",
-                       "subject":"デザインの資料\n<br />１０月は<a href='http://sunstripe.main.jp/'>きゃらあげ素敵曜日チャンネル</a>のイベントで配布用チラシを作成することになりました！！！\n",
-                       },
-    ];
-</script>
-
 <body>
     <h1>〜　素敵曜日 2017年１０月分　〜</h1>
     
+    <!-- NEWS を JavaScriptで一覧(3)表示する // -->
     <script>
+        var d = 3;
+        var s = newsData.length - 2 - d;
         
-        function openURL(url,target) {
-            
-            if( target )
-            {
-                window.open(url, target); // 新しいタブを開き、ページを表示
-            }
-            else if ( target === undefined || target == "" )
-            {
-                window.location.href = url; // 通常の遷移
-            }
-            else
-            {
-                window.open(url, '_blank'); // 新しいタブを開き、ページを表示
-            }
+        if (d < 1) {
+            document.write(displayNewsData(newsData.length - 1));
         }
-        
-        
-        for (var a = 0;a < articleData.length; a++)
+    else {
+        for (var a = newsData.length - 2;a > s; a--)
         {
-            document.write("<div class='" + 'article_box' + "' onclick='openURL(\"" + articleData[ a ].url + "\")'>");
-            document.write("<h3>" + articleData[ a ].title + "</h3>");
-            document.write("<p>" + articleData[ a ].subject + "</p>");
-            
-            document.write("<a href='" + articleData[ a ].url + "'>");
-            document.write("<h6 class='" + 'bottom0' + "'>" + "関連記事 : " + articleData[ a ].url + "</h6>");
-            document.write("</a>");
-            document.write("</div>");
+            document.write(displayNewsData(a));
         }
+    }
     </script>
+    <!-- NEWS を JavaScriptで一覧(3)表示する  -->
     
     <footer class="wf-nicomoji">
         <hr class="style-bottom"/>
