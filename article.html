@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/article.css"/>
+    <title>〜　記事一覧 2017年１０月分　〜</title>
+    <style>
+    a {
+        text-decoration:none;
+    }
+    a:link {
+        color: rgba(0, 0, 255, 0.32);
+    }    /* 未訪問のリンク */
+    a:visited {
+        color: rgba(0, 0, 0, 0.32);
+    } /* 訪問済みのリンク */
+    a:hover {
+        color: #ff0000;
+    }   /* ポイント時のリンク */
+    a:active {
+        color: #ff8000;
+    }  /* 選択中のリンク */
+    .bottom0 {
+        position: relative;
+        bottom:0px;
+    }
+    .article_box {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        color: #00BCD4;
+        background: #e4fcff;/*背景色*/ border-top: solid 6px #1dc1d6;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    }
+    .article_box p {
+        margin: 0;
+        padding: 0;
+        min-height:200px;
+    }
+
+    </style>
+</head>
+
+<script>
+    var articleData = [
+                       {
+                       "title":"フライヤーデザイン９",
+                       "url":"./flayer201709.html",
+                       "subject":"デザインの資料\n<br />９月は<a href='http://sunstripe.main.jp/nbiCafe/'>ネクストブレイクアイドルカフェ</a>のイベントで用いることになりました！！！\n",
+                       },
+                       {
+                       "title":"フライヤーデザイン１０",
+                       "url":"./flayer201710.html",
+                       "subject":"デザインの資料\n<br />１０月は<a href='http://sunstripe.main.jp/'>きゃらあげ素敵曜日チャンネル</a>のイベントで配布用チラシを作成することになりました！！！\n",
+                       },
+    ];
+</script>
+
+<body>
+    <h1>〜　素敵曜日 2017年１０月分　〜</h1>
+    
+    <script>
+        
+        function openURL(url,target) {
+            
+            if( target )
+            {
+                window.open(url, target); // 新しいタブを開き、ページを表示
+            }
+            else if ( target === undefined || target == "" )
+            {
+                window.location.href = url; // 通常の遷移
+            }
+            else
+            {
+                window.open(url, '_blank'); // 新しいタブを開き、ページを表示
+            }
+        }
+        
+        
+        for (var a = 0;a < articleData.length; a++)
+        {
+            document.write("<div class='" + 'article_box' + "' onclick='openURL(\"" + articleData[ a ].url + "\")'>");
+            document.write("<h3>" + articleData[ a ].title + "</h3>");
+            document.write("<p>" + articleData[ a ].subject + "</p>");
+            
+            document.write("<a href='" + articleData[ a ].url + "'>");
+            document.write("<h6 class='" + 'bottom0' + "'>" + "関連記事 : " + articleData[ a ].url + "</h6>");
+            document.write("</a>");
+            document.write("</div>");
+        }
+    </script>
+    
+    <footer class="wf-nicomoji">
+        <hr class="style-bottom"/>
+        (C)Sunstripe
+    </footer>
+</body>
+</html>
