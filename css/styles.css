@@ -229,3 +229,42 @@ a.main_menu:after {
     text-decoration: none;
     transition   : all .4s;
 }
+
+.bgColorBlack {
+    background-color:rgba(100,100,100,0.8);
+}
+.textColorBlack {
+    color: rgba(0,0,0,0.8);
+}
+.bgColorBlue {
+    background-color:rgba(200,200,255,0.8);
+}
+.textColorBlue {
+    color: rgba(100,100,200,0.8);
+}
+.bgColorPink {
+    background-color:rgba(255,230,230,0.8);
+}
+.textColorPink {
+    color: rgba(200,150,150,0.8);
+}
+.bgColorRed {
+    background-color:rgba(250,200,200,0.8);
+}
+.textColorRed {
+    color: rgba(200,100,100,0.8);
+}
+.bgColorYellow {
+    background-color:rgba(250,250,200,0.8);
+}
+.textColorYellow {
+    background-color:rgba(200,200,100,0.8);
+}
+.bgColorWhite {
+    background-color:rgba(255,255,255,0.8);
+}
+.textColorWhite {
+    background-color:rgba(200,200,200,0.8);
+}
+
+

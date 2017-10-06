@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja" target="_blank">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>素敵曜日 - Design Lab</title>
+        <script type="text/javascript" src="./js/init.js"></script>
+        <script type="text/javascript" src="./js/db.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+            <style>
+                </style>
+    </head>
+    <body>
+        <header>
+            <nav class="designMenu">
+                <menu>
+                    <li class="design"><a class="design" href="http://sunstripe.main.jp/">HOME</a></li>
+                    <li class="design"><a class="design" href="http://sunstripe.main.jp/lab/">素敵曜日</a></li>
+                    <li class="design"><a class="design selected" href="./index.html">Design Lab</a></li>
+                    <li class="design"><a class="design" href="../CSSLab/index.html">CSSLab</a></li>
+                    <li class="design"><a class="design" href="../HTMLLab/index.html">HTMLLab</a></li>
+                    <li class="design"><a class="design" href="../PHPLab/index.html">PHPLab</a></li>
+                    <li class="design"><a class="design" href="../JavaScriptLab/index.html">JavaScriptLab</a></li>
+                    <li class="design"><a class="design" href="../GitMaster/index.html">GitMaster</a></li>
+                </menu>
+            </nav>
+        </header>
+        
+        <script>
+            var settingsData = [
+                                {
+                                "title":"通知について",
+                                "url":"",
+                                "items":[
+                                         {
+                                         "title":"クーポン通知",
+                                         "url":"",
+                                         "flag":false,
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"現在地周辺",
+                                "items":[
+                                         {
+                                         "title":"検索範囲（半径距離）",
+                                         "url":"",
+                                         "km":1000,
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"検索履歴",
+                                "items":[
+                                         {
+                                         "title":"検索履歴の保存数",
+                                         "url":"",
+                                         "count":100,
+                                         },
+                                         {
+                                         "title":"検索履歴を消去する",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"店舗履歴",
+                                "items":[
+                                         {
+                                         "title":"店舗履歴の保存数",
+                                         "url":"",
+                                         "count":100,
+                                         },
+                                         {
+                                         "title":"店舗履歴を消去する",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"クーポン履歴",
+                                "items":[
+                                         {
+                                         "title":"クーポン履歴の保存数",
+                                         "url":"",
+                                         "count":100,
+                                         },
+                                         {
+                                         "title":"クーポン履歴を消去する",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"場所履歴",
+                                "items":[
+                                         {
+                                         "title":"場所履歴の保存数",
+                                         "url":"",
+                                         "count":100,
+                                         },
+                                         {
+                                         "title":"場所履歴を消去する",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"フリーワード履歴",
+                                "items":[
+                                         {
+                                         "title":"フリーワード履歴の保存数",
+                                         "url":"",
+                                         "count":100,
+                                         },
+                                         {
+                                         "title":"フリーワード履歴を消去する",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"初期値に戻す",
+                                "items":[
+                                         {
+                                         "title":"設定を初期値に戻す",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"ディスクキャッシュ",
+                                "items":[
+                                         {
+                                         "title":"使用中の合計サイズ",
+                                         "url":"",
+                                         "size":"",
+                                         },
+                                         {
+                                         "title":"キャッシュを消去する",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"その他",
+                                "items":[
+                                         {
+                                         "title":"お問い合わせ",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"利用規約",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"ID 規約",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"WEB 規約",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"プライバシーポリシー",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"このアプリについて",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                {
+                                "title":"デバッグ機能",
+                                "items":[
+                                         {
+                                         "title":"アプリをクラッシュさせる",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"接続先を変更する",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"接続先を変更して初期化",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"ABテスト",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"ABテストを指定して初期化",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"マスタ・XML更新準備",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"ビーコン機能ログ表示切り替え",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"ビーコンフィルター設定",
+                                         "url":"",
+                                         },
+                                         {
+                                         "title":"デバッグ設定",
+                                         "url":"",
+                                         },
+                                         ],
+                                },
+                                ];
+                                document.write("<table style='width:100%;'>");
+                                for (var s = 0;s < settingsData.length;s++)
+                                {
+                                    document.write( "<tr style='width:100%;'>");
+                                    document.write( "<td colspan='2' style='width:100%;background-color:rgba(100,100,100,0.5);'>");
+                                    document.write( settingsData[ s ].title);
+                                    document.write( "</td>");
+                                    document.write( "</tr>");
+                                    
+                                    for (var c = 0;c < settingsData[ s ].items.length;c++)
+                                    {
+                                        document.write( "<tr style='width:100%;'>");
+                                        document.write( "<td>");
+                                        document.write( "<li style='width:100%;'>");
+                                        document.write( settingsData[ s ].items[ c ].title);
+                                        document.write( "</li>");
+                                        document.write( "</td>");
+                                        document.write( "<td>");
+                                        if(settingsData[ s ].items[ c ].count)
+                                        {
+                                            document.write( "<li style='width:100%;'>");
+                                            document.write( settingsData[ s ].items[ c ].count );
+                                            document.write( "</li>");
+                                        }
+                                        else if(settingsData[ s ].items[ c ].url)
+                                        {
+                                            document.write( " > ");
+                                        }
+                                        else
+                                        {
+                                            
+                                        }
+                                        document.write( "</td>");
+                                        document.write( "</tr>");
+                                    }
+                                }
+        document.write("</table>");
+            </script>
+        <hr style="clear:both;"/>
+        
+        
+        <!-- NEWS を JavaScriptで一覧(3)表示する // -->
+        <script>
+            var d = 3;
+            var s = newsData.length - 2 - d;
+            
+            if (d < 1) {
+                document.write(displayNewsData(newsData.length - 1));
+            }
+        else {
+            for (var a = newsData.length - 2;a > s; a--)
+            {
+                document.write(displayNewsData(a));
+            }
+        }
+        </script>
+        <!-- NEWS を JavaScriptで一覧(3)表示する  -->
+
+        <footer>
+            <a class="main_menu" href="http://sunstripe.main.jp/">HOME</a> > <a class="main_menu" href="./index.html">素敵曜日 - Design Lab</a> > <a class="main_menu" href="./reference.html">reference</a> > <a class="main_menu" href="./help.html">HELP</a> > <a class="main_menu" href="./setting.html">設定</a>
+            <br />
+            <a href="./news.html">NEWS</a>
+            <div style="clear:both;text-align:center;">
+                
+                &copy; 2011 - <script>
+                    var newDate = new Date();
+                    //年・月・日・曜日を取得する
+                    var year = newDate.getFullYear();
+                    document.write(year);
+                    </script> Team Sun Stripe
+            </div>
+        </footer>
+    </body>
+</html>

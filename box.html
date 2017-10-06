@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="ja" target="_blank">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>素敵曜日 - Design Lab - BOX</title>
+        <script type="text/javascript" src="./js/init.js"></script>
+        <script type="text/javascript" src="./js/db.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+        <style>
+            html {
+                /* 画像ファイルの指定 */
+                background-image: url("./images/background-photo.png");
+                
+                /* 画像を常に天地左右の中央に配置 */
+                background-position: center center;
+                
+                /* 画像をタイル状に繰り返し表示しない */
+                background-repeat: no-repeat;
+                
+                /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+                background-attachment: fixed;
+                
+                /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+                background-size: cover;
+                
+                /* 背景画像が読み込まれる前に表示される背景のカラー */
+                background-color: #464646;
+            }
+        @media only screen and (max-width: 767px) {
+            body {
+                background-image: url("./images/background-photo-mobile-devices.png");
+            }
+        }
+        body {
+            background: url("./images/background-photo.png") center center / cover no-repeat fixed;
+            margin:0 auto;
+        }
+        #contents {
+            width:70%;
+            min-width:420px;
+            max-width:600px;
+            float:left;
+        }
+        #subcontents {
+            width:30%;
+            min-width:320px;
+            float:right;
+            height:100%;
+        }
+        h1.title {
+            color: #364e96;/*文字色*/
+            border: solid 3px rgba(0,0,150,1.0);/*線色*/
+            padding: 0.5em;/*文字周りの余白*/
+            border-radius: 0.5em;/*角丸*/
+            background-color:white;
+            margin-bottom:10px;
+        }
+        h1.title:hover {
+            background-color:rgba(255,255,255,0.9);
+        }
+        .base {
+            background-color:rgba(255,255,255,0.9);
+            padding:0 10px;
+        }
+        h2.subtitle {
+            border-bottom: solid 3px rgba(0,0,150,1.0);
+            /*線の種類（実線） 太さ 色*/
+            margin-bottom:10px;
+        }
+        h2.subtitle:hover {
+            background-color:rgba(255,255,255,0.5);
+        }
+        h3.heading {
+            padding: 0.25em 0.5em;/*上下 左右の余白*/
+            color: black;/*文字色*/
+            background: transparent;/*背景透明に*/
+            border-left: solid 5px rgba(0,0,150,1.0);/*左線*/
+        }
+        h3.heading:hover {
+            background-color:rgba(255,255,255,0.5);
+        }
+        h3.title {
+            padding: 0.5em;
+            background: aliceblue;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+            border-bottom: solid 5px rgba(0,0,150,1.0);/*左線*/
+        }
+        h3.title:hover {
+            background-color:rgba(0,0,150,0.3);
+            color:rgba(255,255,255,1.0);
+        }
+        
+        a {
+            text-decoration: none;
+            color:white;
+        }
+        p.entry {
+            font-size:0.8em;
+        }
+        p.pickUp {
+            font-size:0.8em;
+        }
+
+        #subcontents h2.title {
+            color:white;
+            border-bottom: solid 3px rgba(0,0,150,1.0);
+            /*線の種類（実線） 太さ 色*/
+            margin-bottom:10px;
+            margin-left:10px;
+        }
+        #subcontents h2.title:hover {
+            color:black;
+            border-bottom: solid 3px rgba(0,0,150,1.0);
+            /*線の種類（実線） 太さ 色*/
+            margin-bottom:10px;
+            margin-left:10px;
+            background-color:rgba(255,255,255,0.5);
+        }
+        #subcontents .ad50 {
+            width:50%;
+            float:right;
+        }
+        #subcontents .ad100 {
+            width:100%;
+        }
+        #subcontents .recommend {
+            width:100%;
+        }
+        #subcontents .links {
+            width:100%;
+        }
+        textarea {
+            background-color:rgba(50,50,50,0.7);
+            color:white;
+        }
+        
+        
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="designMenu">
+                <menu>
+                    <li class="design"><a class="design" href="http://sunstripe.main.jp/">HOME</a></li>
+                    <li class="design"><a class="design" href="http://sunstripe.main.jp/lab/">素敵曜日</a></li>
+                    <li class="design"><a class="design selected" href="./index.html">Design Lab</a></li>
+                    <li class="design"><a class="design" href="../CSSLab/index.html">CSSLab</a></li>
+                    <li class="design"><a class="design" href="../HTMLLab/index.html">HTMLLab</a></li>
+                    <li class="design"><a class="design" href="../PHPLab/index.html">PHPLab</a></li>
+                    <li class="design"><a class="design" href="../JavaScriptLab/index.html">JavaScriptLab</a></li>
+                    <li class="design"><a class="design" href="../GitMaster/index.html">GitMaster</a></li>
+                </menu>
+            </nav>
+        </header>
+        <div id="contents">
+            <h1 class="title">BOX デザイン</h1>
+            
+            <h3 class="title">CSS3でスタイルするフォームのテキスト入力欄 input</h3>
+            <div class="base">
+                HTMLは非常にシンプルです。
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">BASIC</h2>
+                
+                <div id="targetInputBasic">
+                    <div class="boxBasic">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBasic" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBasic">
+                    .boxBasic {
+                        padding: 0.4em 1em;
+                        margin: 2em 0;
+                        font-weight: bold;
+                        border: solid 2px #000000;
+                    }
+                    .boxBasic p {
+                    margin: 0;
+                    padding: 0;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBasic" style="width:100%;height:160px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBasic");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Rounded Corners(角丸)</h2>
+                枠線を角丸にします。
+                
+                <div id="targetInputRoundedCorners">
+                    <div class="boxBasic boxRoundedCorners">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputRoundedCorners" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputRoundedCorners">
+                    .boxRoundedCorners {
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        border-radius: 5px;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputRoundedCorners" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputRoundedCorners");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Background(背景色)</h2>
+                背景色をつけます。
+                
+                <div id="targetInputBackground">
+                    <div class="boxBasic boxRoundedCorners boxBackground">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic boxRoundedCorners を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBackground" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBackground">
+                    .boxBackground {
+                        color: #2c2c2f;
+                        background: #cde4ff;/*背景色*/
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBackground" style="width:100%;height:80px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBackground");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Border - Top Bottom</h2>
+                上下ボーダーを入れて、おしゃれな感じにします。
+                
+                <div id="targetInputBorderTopBottom">
+                    <div class="boxBasic boxBackground borderTopBottom">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic boxBackground を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBorderTopBottom" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBorderTopBottom">
+                    .borderTopBottom {
+                        border: solid 0; /* １回リセット */
+                        border-top: solid 5px #5989cf;
+                        border-bottom: solid 5px #5989cf;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBorderTopBottom" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBorderTopBottom");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Border - Double</h2>
+                ボーダーを二重に入れて、おしゃれな感じにします。
+                
+                <div id="targetInputBorderDouble">
+                    <div class="boxBasic boxBackground borderDouble">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                    
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic boxBackground を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBorderDouble" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBorderDouble">
+                    .borderDouble {
+                        border: solid 0; /* １回リセット */
+                        border: double 5px #4ec4d3;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBorderDouble" style="width:100%;height:80px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBorderDouble");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Border - Dashed</h2>
+                ボーダーを破線にして、おしゃれな感じにします。
+                
+                <div id="targetInputBorderDashed">
+                    <div class="boxBasic boxBackground boxBorderDashed">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                    
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic boxBackground を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBorderDashed" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBorderDashed">
+                    .boxBorderDashed {
+                        border: solid 0; /* １回リセット */
+                        border: dashed 2px #5b8bd0;/*点線*/
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBorderDashed" style="width:100%;height:80px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBorderDashed");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Border - Left 12px</h2>
+                左にだけ太線にして、おしゃれな感じにします。
+                
+                <div id="targetInputBorderLeft12">
+                    <div class="boxBasic bgColorYellow boxBorderLeft12">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                    
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic bgColorYellow を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBorderLeft12" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBorderLeft12">
+                    .boxBorderLeft12 {
+                        border: solid 0; /* １回リセット */
+                        border-left: solid 12px #ffc06e;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBorderLeft12" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBorderLeft12");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Border - Top 12px</h2>
+                上にだけ太線にして、おしゃれな感じにします。
+                
+                <div id="targetInputBorderTop12">
+                    <div class="boxBasic bgColorRed textColorRed boxBorderTop12">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                    
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic bgColorRed textColorRed bgColorRed を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBorderTop12" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBorderTop12">
+                .boxBorderTop12 {
+                    border: solid 0; /* １回リセット */
+                    border-top: solid 10px #ff7d6e;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBorderTop12" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBorderTop12");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow Bottom(影)</h2>
+                ディテールをアップするために、下にシャドウをつけます。
+                
+                <div id="targetInputShadowBottom">
+                    <div class="boxBasic bgColorBlue textColorBlue boxBorderTop12Bule boxShadowBottom">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic bgColorBlue textColorBlue boxBorderTop12Bule を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputShadowBottom" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputShadowBottom">
+                .boxBorderTop12Bule {
+                    border: solid 0; /* １回リセット */
+                    border-top: solid 10px #6e7dff;
+                }
+                .boxShadowBottom {
+                        -moz-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+                        -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+                        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputShadowBottom" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputShadowBottom");
+                    </script>
+                <!-- 追加：ここまで //-->
+
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow スマート(影)</h2>
+                スマートなデザインのシャドウ
+                
+                <div id="targetInputShadowSmart">
+                    <div class="boxBasic bgColorWhite textColorBlack boxBorderTop12Black boxShadowBottom">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic bgColorWhite textColorBlack boxBorderTop12Black boxShadowBottom を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputShadowSmart" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputShadowSmart">
+                .boxBorderTop12Black {
+                    border: solid 0; /* １回リセット */
+                    border-top: solid 10px #6e6e6e;
+                }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputShadowSmart" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputShadowSmart");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow 分厚いボード風</h2>
+                分厚いボード風
+                
+                <div id="targetInputBorderBottom">
+                    <div class="boxBasic boxBackground textColorBlue boxBorderBottom">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic boxBackground textColorBlue を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBorderBottom" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBorderBottom">
+                .boxBorderBottom {
+                    border: solid 0; /* １回リセット */
+                    border-bottom: solid 6px #aac5de;
+                    border-radius: 9px;
+                }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBorderBottom" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBorderBottom");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow 分厚いボード風(影)</h2>
+                分厚いボードのシャドウ
+                
+                <div id="targetInputShadowBorderBottom">
+                    <div class="boxBasic boxBackground textColorBlue boxShadowBorderBottom">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic boxBackground textColorBlue を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputShadowBorderBottom" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputShadowBorderBottom">
+                    
+                    .boxShadowBorderBottom {
+                        border: solid 0; /* １回リセット */
+                        border-bottom: solid 6px #3f87ce;
+                        border-radius: 9px;
+                        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputShadowBorderBottom" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputShadowBorderBottom");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow 布風(影)</h2>
+                布風
+                
+                <div id="targetInputShadowBorderDashed">
+                    <div class="boxBasic boxBackground textColorBlue boxShadowBorderDashed">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic boxBackground textColorBlue を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputShadowBorderDashed" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputShadowBorderDashed">
+                    
+                    .boxShadowBorderDashed {
+                        border: solid 0; /* １回リセット */
+                        background: #d6ebff;
+                        box-shadow: 0px 0px 0px 10px #d6ebff;
+                        border: dashed 2px white;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputShadowBorderDashed" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputShadowBorderDashed");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow 布風ピンク角丸(影)</h2>
+                布風
+                
+                <div id="targetInputShadowPinkBorderDashedRadius">
+                    <div class="boxBasic bgColorPink boxShadowPinkBorderDashedRadius">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic bgColorPink を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputShadowPinkBorderDashedRadius" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputShadowPinkBorderDashedRadius">
+                    .boxShadowPinkBorderDashedRadius {
+                        border: solid 0; /* １回リセット */
+                        box-shadow: 0px 0px 0px 10px #ffeaea;
+                        border: dashed 2px #ffc3c3;
+                        border-radius: 8px;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputShadowPinkBorderDashedRadius" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputShadowPinkBorderDashedRadius");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Stripe ストライプ</h2>
+                シマシマ
+                
+                <div id="targetInputStripeAngle45">
+                    <div class="boxBasic boxStripeAngle45">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputStripeAngle45" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputStripeAngle45">
+                .boxStripeAngle45 {
+                    border: solid 0; /* １回リセット */
+                    background: -webkit-repeating-linear-gradient(-45deg, #ffc3c3, #ffc3c3 3px,#ffe9f4 3px, #ffe9f4 7px);
+                    background: repeating-linear-gradient(-45deg, #ffc3c3, #ffc3c3 3px,#ffe9f4 3px, #ffe9f4 7px);
+                }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputStripeAngle45" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputStripeAngle45");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Stripe ストライプ</h2>
+                シマシマ
+                
+                <div id="targetInputBox17">
+                    <div class="boxBasic box17">
+                        <p>サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章サンプル文章</p>
+                    </div>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル boxBasic を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputBox17" style="width:100%;height:100px;">
+                </textarea>
+                
+                <style id="styleInputBox17">
+                    .box17{
+                        margin:2em 0;
+                        position: relative;
+                        padding: 0.5em 1.5em;
+                        border-top: solid 2px black;
+                        border-bottom: solid 2px black;
+                    }
+                .box17:before, .box17:after{
+                    content: '';
+                    position: absolute;
+                    top: -10px;
+                    width: 2px;
+                    height: -webkit-calc(100% + 20px);
+                    height: calc(100% + 20px);
+                    background-color: black;
+                }
+                .box17:before {left: 10px;}
+                .box17:after {right: 10px;}
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputBox17" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputBox17");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow Inset(影)</h2>
+                スマートなデザインに
+                ディテールをアップするために、内側にシャドウをつけます。
+                
+                <div id="targetInputShadowInset">
+                    <form>
+                        <input type="text" class="basic shadowInset" value="Shadow Inset"/>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputShadowInset" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleInputShadowInset">
+                    .shadowInset {
+                        -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0,0.5);
+                        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+                        box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.5);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputShadowInset" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputShadowInset");
+                    </script>
+                <!-- 追加：ここまで //-->
+            
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Shadow Inset - Top</h2>
+                シャドウを上部だけにして、上品な感じにします。
+                
+                <div id="targetInputShadowInsetTop">
+                    <form>
+                        <input type="text" class="basic shadowInsetTop" value="Shadow Inset - Top"/>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputShadowInsetTop" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleInputShadowInsetTop">
+                    .shadowInsetTop {
+                        -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+                        -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+                        box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputShadowInsetTop" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputShadowInsetTop");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">White Shadow - Bottom - Rounded Corners</h2>
+                白のシャドウを下だけ適用してみます。これは色付きの背景で映えます。
+                
+                <div id="targetInputWhiteShadowBottom" style="background-color:rgba(0,0,150,1.0);padding:10px;">
+                    <form>
+                        <input type="text" class="basic whiteShadowBottom roundedCorners" value="White Shadow - Bottom" style="width:230px;"/>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic roundedCorners を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputWhiteShadowBottom" style="width:100%;height:70px;">
+                </textarea>
+                
+                <style id="styleInputWhiteShadowBottom">
+                    .whiteShadowBottom {
+                        -webkit-box-shadow: 0px 4px rgba(255, 255, 255, 0.5);
+                        -moz-box-shadow: 0px 4px rgba(255, 255, 255, 0.5);
+                        box-shadow: 0px 4px rgba(255, 255, 255, 0.5);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputWhiteShadowBottom" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputWhiteShadowBottom");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Active State - Rounded Corners</h2>
+                白のシャドウを下だけ適用してみます。これは色付きの背景で映えます。
+                
+                <div id="targetInputActiveState">
+                    <form>
+                        <input type="text" class="basic activeState roundedCorners" value="Active State"/>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic roundedCorners を使用</span>
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayInputActiveState" style="width:100%;height:70px;">
+                </textarea>
+                
+                <style id="styleInputActiveState">
+                    input.activeState {
+                        border:solid 2px rgba(0,0,0,0.3);
+                    }
+                input.activeState:focus {
+                    border:solid 2px #EEA34A;
+                }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleInputActiveState" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("InputActiveState");
+                    </script>
+                <!-- 追加：ここまで //-->
+            </div>
+            
+            <h3 class="title">CSS3でスタイルするフォームのボタン button</h3>
+            <div class="base">
+                ボタンのHTMLも非常にシンプルです。
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">BASIC</h2>
+                
+                <div id="targetButtonBasic">
+                    <form>
+                        <button type="submit" class="basic">Submit</button>
+                    </form>
+                </div>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonBasic" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonBasic">
+                    button.basic {
+                        border:solid 1px #ccc;
+                        padding:15px 30px;
+                        margin:0 0 20px;
+                        font-family:Arial, sans-serif;
+                        font-size:1.2em;
+                        text-transform:uppercase;
+                        font-weight:bold;
+                        color:#333;
+                        cursor:pointer;
+                        width:200px;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonBasic" style="width:100%;height:200px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonBasic");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Gradient</h2>
+                ボタンにグラデーションを適用してみます。
+                
+                <div id="targetButtonGradient">
+                    <form>
+                        <button type="submit" class="basic gradient">Submit</button>
+                    </form>
+                </div>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonGradient" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonGradient">
+                    button.gradient {
+                        background-image: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#aaa));
+                        background-image: -webkit-linear-gradient(top, #ddd, #aaa);
+                        background-image: -moz-linear-gradient(top, #ddd, #aaa);
+                        background-image: -ms-linear-gradient(top, #ddd, #aaa);
+                        background-image: -o-linear-gradient(top, #ddd, #aaa);
+                        background-image: linear-gradient(top, #ddd, #aaa);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddd', endColorstr='#aaa',GradientType=0 ); /* IE6-9 */
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonGradient" style="width:100%;height:160px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonGradient");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Gradient - Top Inset Shadow</h2>
+                内側の上部だけに白のシャドウを適用します。このエフェクトは枠線があると効果的です。
+                
+                <div id="targetButtonTopInsetShadow">
+                    <form>
+                        <button type="submit" class="basic gradient topInsetShadow">Submit</button>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic gradient を使用</span>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonTopInsetShadow" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonTopInsetShadow">
+                    button.topInsetShadow {
+                        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+                        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+                        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonTopInsetShadow" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonTopInsetShadow");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Gradient - Bottom Shadow</h2>
+                内側の上部だけに白のシャドウを適用します。このエフェクトは枠線があると効果的です。
+                
+                <div id="targetButtonBottomShadow">
+                    <form>
+                        <button type="submit" class="basic gradient bottomShadow">Submit</button>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic gradient を使用</span>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonBottomShadow" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonBottomShadow">
+                    button.bottomShadow {
+                        -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+                        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+                        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonBottomShadow" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonBottomShadow");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Gradient - Top Inset + Bottom Shadow</h2>
+                上内側の白シャドウと下のシャドウをあわせたものです。
+                
+                <div id="targetButtonTopInsetBottomShadow">
+                    <form>
+                        <button type="submit" class="basic gradient topInsetBottomShadow">Submit</button>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic gradient を使用</span>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonTopInsetBottomShadow" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonTopInsetBottomShadow">
+                    button.topInsetBottomShadow {
+                        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+                        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+                        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonTopInsetBottomShadow" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonTopInsetBottomShadow");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Gradient - Top Inset + Bottom Shadow + Rounded Corners</h2>
+                更に、角丸にします。
+                
+                <div id="targetButtonRoundedCorners">
+                    <form>
+                        <button type="submit" class="basic gradient topInsetBottomShadow roundedCorners">Submit</button>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic gradient topInsetBottomShadowを使用</span>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonRoundedCorners" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonRoundedCorners">
+                    button.roundedCorners {
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        border-radius: 5px;
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonRoundedCorners" style="width:100%;height:100px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonRoundedCorners");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Gradient - Text Shadow</h2>
+                更に、角丸にします。
+                
+                <div id="targetButtonTextShadow">
+                    <form>
+                        <button type="submit" class="basic gradient roundedCorners textShadow">Submit</button>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic gradient roundedCornersを使用</span>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonTextShadow" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonTextShadow">
+                    button.textShadow {
+                        text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.8);
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonTextShadow" style="width:100%;height:70px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonTextShadow");
+                    </script>
+                <!-- 追加：ここまで //-->
+                
+                <!-- 追加：ここから //-->
+                <h2 class="subtitle">Gradient - hover</h2>
+                更に、ホバーにします。
+                
+                <div id="targetButtonHover">
+                    <form>
+                        <button type="submit" class="basic gradient roundedCorners buttonHover">Submit</button>
+                    </form>
+                </div>
+                <span style="color:rgba(0,0,0,0.5);">※ スタイル basic gradient roundedCornersを使用</span>
+                
+                <h3 class="heading">HTML</h3>
+                
+                <textarea id="displayButtonHover" style="width:100%;height:60px;">
+                </textarea>
+                
+                <style id="styleButtonHover">
+                    button.buttonHover:hover {
+                        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#aaa));
+                        background-image: -webkit-linear-gradient(top, #FFF, #aaa);
+                        background-image: -moz-linear-gradient(top, #FFF, #aaa);
+                        background-image: -ms-linear-gradient(top, #FFF, #aaa);
+                        background-image: -o-linear-gradient(top, #FFF, #aaa);
+                        background-image: linear-gradient(top, #FFF, #aaa);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#aaa',GradientType=0 ); /* IE6-9 */
+                    }
+                </style>
+                
+                <h3 class="heading">CSS</h3>
+                <textarea  id="displayStyleButtonHover" style="width:100%;height:150px;">
+                </textarea>
+                <script>
+                    innerHTMLSettingElementById("ButtonHover");
+                    </script>
+                <!-- 追加：ここまで //-->
+            </div>
+            
+        </div>
+        
+        <div id="subcontents">
+            <h2 class="title">Sponsors</h2>
+            <script>
+                document.write(displayAdData());
+                </script>
+            
+            <a href="./ad.html">当サイトの広告掲載について</a>
+            
+            <h2 class="title">Entry</h2>
+            <script>
+                document.write(displayEntryData());
+                </script>
+            
+            <h2 class="title">Pick UP</h2>
+            <script>
+                document.write(displayPickUpData());
+                </script>
+            
+            <h2 class="title">Recommend</h2>
+            <script>
+                document.write(displayRecommendData());
+                </script>
+            
+            <h2 class="title">Links</h2>
+            <script>
+                document.write(displayLinksData());
+                </script>
+            
+        </div>
+        
+        <hr style="clear:both;">
+        
+        <!-- NEWS を JavaScriptで一覧(3)表示する // -->
+        <script>
+            var d = 3;
+            var s = newsData.length - 2 - d;
+            
+            if (d < 1) {
+                document.write(displayNewsData(newsData.length - 1));
+            }
+        else {
+            for (var a = newsData.length - 2;a > s; a--)
+            {
+                document.write(displayNewsData(a));
+            }
+        }
+        </script>
+        <!-- NEWS を JavaScriptで一覧(3)表示する  -->
+        
+        <footer>
+            <a class="main_menu" href="http://sunstripe.main.jp/">HOME</a> > <a class="main_menu" href="./index.html">素敵曜日 - Design Lab</a> > <a class="main_menu" href="./reference.html">reference</a> > <a class="main_menu" href="./help.html">HELP</a>
+            <div style="clear:both;text-align:center;">
+                
+                &copy; 2011 - <script>
+                    var newDate = new Date();
+                    //年・月・日・曜日を取得する
+                    var year = newDate.getFullYear();
+                    document.write(year);
+                    </script> Team Sun Stripe
+            </div>
+        </footer>
+    </body>
+</html>
