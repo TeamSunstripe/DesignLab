@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/flayer.css"/>
+    <title>〜　２０１７年１１月分　エントリー受付中　〜</title>
+    <style>
+        .wf-nicomoji { font-family: "Nico Moji"; }
+        .wf-roundedmplus1c { font-family: "Rounded Mplus 1c"; }
+        
+        hr.style-top {
+            border: 0;
+            background: #333;
+            background-image: -webkit-linear-gradient(left, #fff, #333, #fff);
+            background-image:    -moz-linear-gradient(left, #fff, #333, #fff);
+            background-image:     -ms-linear-gradient(left, #fff, #333, #fff);
+            background-image:      -o-linear-gradient(left, #fff, #333, #fff);
+            height: 5px;
+            border: 0;
+            box-shadow: inset 0 5px 5px -5px rgba(0,0,0,0.5);
+        }
+    hr.style-bottom {
+        border: 0;
+        background: #333;
+        background-image: -webkit-linear-gradient(left, #fff, #333, #fff);
+        background-image:    -moz-linear-gradient(left, #fff, #333, #fff);
+        background-image:     -ms-linear-gradient(left, #fff, #333, #fff);
+        background-image:      -o-linear-gradient(left, #fff, #333, #fff);
+        height: 5px;
+        border: 0;
+        box-shadow: 0px 5px 5px -5px rgba(0,0,0,0.5);
+    }
+    #contents {
+        height:40%;
+    }
+    #subcontents {
+        
+    }
+    #leftcontents {
+        width:50%;
+        float:left;
+    }
+    #rightcontents {
+        width:50%;
+        float:right;
+    }
+    </style>
+</head>
+
+<body>
+    <h1 class="wf-roundedmplus1c">〜　エントリー受付中　〜</h1>
+    <hr class="style-top"/>
+    
+    <div id="contents" class="wf-roundedmplus1c">
+        <h2>出演者募集</h2>
+        <span>出演者募集</span>
+        ２０１７年１１月分　エントリー受付中
+    </div>
+    <hr class="style-bottom"/>
+    <div id="#subcontents" class="wf-roundedmplus1c">
+        <div id="leftcontents">
+            <div id="idol" style="width:100%;height:100px;" onclick="changeTitle('出演者募集（アイドル）')">
+                <h2>出演者募集（アイドル）</h2>
+            </div>
+            <div id="singer" style="width:100%;height:100px;" onclick="changeTitle('出演者募集（シンガー）')">
+                <h2>出演者募集（シンガー）</h2>
+            </div>
+            <div id="DJ" style="width:100%;height:100px;" onclick="changeTitle('出演者募集（DJ）')">
+                <h2>出演者募集（DJ）</h2>
+            </div>
+            <div id="MC" style="width:100%;height:100px;" onclick="changeTitle('出演者募集（MC）')">
+                <h2>出演者募集（MC）</h2>
+            </div>
+            <div id="other" style="width:100%;height:100px;" onclick="changeTitle('出演者募集（その他）')">
+                <h2>出演者募集（その他）</h2>
+            </div>
+            <div id="contact" style="width:100%;height:100px;" onclick="changeTitle('各種お問い合わせ（お問い合わせ）')">
+                <h2>各種お問い合わせ（お問い合わせ）</h2>
+            </div>
+            <script>
+                
+                function changeTitle(title) {
+                    var mail_subject = document.getElementById("mail_subject");
+                    mail_subject.innerHTML = title;
+                }
+                
+                function sendMail() {
+                    var mail = "info@sunstripe.main.jp";
+                    var mail_subject = document.getElementById("mail_subject");
+                    var mail_body = document.getElementById("mail_body");
+                    var subject = mail_subject.innerHTML;
+                    var body = mail_body.value;
+                    
+                    var href = "mailto:" + mail;
+                    
+                    if (subject == "" || !subject) {
+                        var c = confirm("件名がありません続けますか？");
+                        if (!c) {
+                            return;
+                        }
+                    }
+                    
+                    href = href + "?subject=" + subject;
+                    
+                    if (body == "" || !body) {
+                        var c = confirm("本文がありませんがそのまま送りますか？");
+                        if (!c) {
+                            return;
+                        }
+                    }
+                    
+                    href = href + "&body=" + body;
+                    alert(href);
+                    location.href = href;
+                }
+            
+                </script>
+        </div>
+        <div id="rightcontents">
+            <h2 id="mail_subject">出演者募集（アイドル）</h2>
+            <textarea id="mail_body" class="wf-roundedmplus1c" style="width:100%;height:300px;"></textarea>
+            <button onclick="sendMail()" class="wf-roundedmplus1c" style="width:100%;height:44px;margin-top:10px;padding:10px;">送信</button>
+        </div>
+    </div>
+    
+    <footer class="wf-nicomoji">
+        <hr class="style-bottom"/>
+        (C)Sunstripe
+    </footer>
+</body>
+</html>
