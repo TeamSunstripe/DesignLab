@@ -16,10 +16,16 @@ header {
     
 }
 
-footer {
-    
+footer
+{
+    width:100%;
+    background-color:white;
 }
-
+#copyright
+{
+    clear:both;
+    text-align:center;
+}
 
 nav {
     margin : 50px auto;
@@ -266,5 +272,14 @@ a.main_menu:after {
 .textColorWhite {
     background-color:rgba(200,200,200,0.8);
 }
-
-
+.clearBoth {
+    clear:both;
+}
+.nonline {
+    background-color:rgba(100,100,100,0.0);
+    color:rgba(100,100,100,0.0);
+    height:0px;
+    display:block;
+    border: 0;
+    border-top: 0px dashed rgba(100,100,100,0.0);
+}

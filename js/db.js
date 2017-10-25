@@ -4,6 +4,65 @@ var db = [];
     
     }
 
+/* footerデータ */
+var footerInfo = {
+    copyrightInfo : {
+    ID:"copyright",
+        title : "Team Sun Stripe",
+        URL : "http://sunstripe.main.jp",
+        establishmentDate : "2011/11/11",
+    },
+    //メインメニュー
+    main_menus :
+    [
+     {
+     title:"HOME",
+     URL:"http://sunstripe.main.jp/",
+     },
+     {
+     title:"素敵曜日 - Design Lab",
+     url:"index.html",
+     },
+     {
+     title:"reference",
+     url:"reference.html",
+     },
+     ],
+    
+    //サブメニュー
+    
+    sub_menus :
+    [
+     {
+     title:"NEWS",
+     url:"news.html",
+     },
+     ],
+    
+    //コンテンツメニュー
+    
+    contents_menus :
+    [
+     {
+     title:"お問い合わせ",
+     url:"contact.html",
+     },
+     {
+     title:"プライバシーポリシー",
+     url:"privacypolicy.html",
+     },
+     {
+     title:"利用規約",
+     url:"rules.html",
+     },
+     {
+     title:"サイトマップ",
+     url:"sitemap.html",
+     },
+     ],
+    
+};
+
 /* newsData */
 
 var newsData = [
