@@ -2,13 +2,16 @@
 <html lang="ja" target="_blank">
     <head>
         <meta charset="UTF-8"/>
-        <title>素敵曜日 - Design Lab</title>
+        <title>素敵曜日 - Design Lab - news</title>
         <script type="text/javascript" src="./js/init.js"></script>
         <script type="text/javascript" src="./js/db.js"></script>
         <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
-            <style>
-                </style>
+        <style>
+        
+            </style>
     </head>
+    <script>
+        </script>
     <body>
         <header>
             <nav class="designMenu">
@@ -25,22 +28,14 @@
             </nav>
         </header>
         
-        <!-- NEWS を JavaScriptで一覧(3)表示する // -->
+        <!-- NEWS を JavaScriptで一覧表示する // -->
         <script>
-            var d = 3;
-            var s = newsData.length - 2 - d;
-            
-            if (d < 1) {
-                document.write(displayNewsData(newsData.length - 1));
-            }
-        else {
-            for (var a = newsData.length - 2;a > s; a--)
+            for (var a = 0;a < newsData.length - 1; a++)
             {
                 document.write(displayNewsData(a));
             }
-        }
-        </script>
-        <!-- NEWS を JavaScriptで一覧(3)表示する  -->
+            </script>
+        <!-- NEWS を JavaScriptで一覧表示する  -->
 
         <footer>
             <a class="main_menu" href="http://sunstripe.main.jp/">HOME</a> > <a class="main_menu" href="./index.html">素敵曜日 - Design Lab</a> > <a class="main_menu" href="./reference.html">reference</a> > <a class="main_menu" href="./help.html">HELP</a>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+    <script type="text/javascript" src="./js/init.js"></script>
+    <script type="text/javascript" src="./js/db.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+    <title>〜　記事一覧 2017年１０月分　〜</title>
+    <style>
+    a {
+        text-decoration:none;
+    }
+    a:link {
+        color: rgba(0, 0, 255, 0.32);
+    }    /* 未訪問のリンク */
+    a:visited {
+        color: rgba(0, 0, 0, 0.32);
+    } /* 訪問済みのリンク */
+    a:hover {
+        color: #ff0000;
+    }   /* ポイント時のリンク */
+    a:active {
+        color: #ff8000;
+    }  /* 選択中のリンク */
+    .bottom0 {
+        position: relative;
+        bottom:0px;
+    }
+    .article_box {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        color: #00BCD4;
+        background: #e4fcff;/*背景色*/ border-top: solid 6px #1dc1d6;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    }
+    .article_box p {
+        margin: 0;
+        padding: 0;
+        min-height:200px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <h1>〜　素敵曜日 2017年１０月分　〜</h1>
+    
+    <!-- NEWS を JavaScriptで一覧(3)表示する // -->
+    <script>
+        var d = 3;
+        var s = newsData.length - 2 - d;
+        
+        if (d < 1) {
+            document.write(displayNewsData(newsData.length - 1));
+        }
+    else {
+        for (var a = newsData.length - 2;a > s; a--)
+        {
+            document.write(displayNewsData(a));
+        }
+    }
+    </script>
+    <!-- NEWS を JavaScriptで一覧(3)表示する  -->
+    
+    <footer class="wf-nicomoji">
+        <hr class="style-bottom"/>
+        (C)Sunstripe
+    </footer>
+</body>
+</html>

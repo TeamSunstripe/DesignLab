@@ -1,11 +1,11 @@
 html {
-    
+    background-image:url("../img/bg.png");
 }
 
 body {
-    width:90%;
-    background-color: rgba(0,100,230,1.0);
+    width:98%;
     background-size : cover;
+    margin:0 auto;
 }
 
 * {
@@ -39,6 +39,41 @@ menu:after {
     clear : both;
 }
 
+a {
+    text-decoration:none;
+}
+a:link {
+    color: rgba(0, 0, 255, 0.32);
+}    /* 未訪問のリンク */
+a:visited {
+    color: rgba(0, 0, 0, 0.32);
+} /* 訪問済みのリンク */
+a:hover {
+    color: #ff0000;
+}   /* ポイント時のリンク */
+a:active {
+    color: #ff8000;
+}  /* 選択中のリンク */
+.bottom0 {
+    position: relative;
+    bottom:0px;
+}
+.article_box {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: rgba(0,0,200,0.8);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    border: 30px solid rgba(255,200,200,0.5);
+    border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+    background: rgba(200,255,255,0.9);/*背景色*/ border-top: solid 6px rgba(200,200,255,0.8);
+}
+.article_box p {
+    margin: 0;
+    padding: 0;
+    min-height:200px;
+}
+
+
 li {
     list-style-type : none;
     background      : linear-gradient(rgba(220,220,255,0.4) 85%, rgba(255,255,255,0.5) 100%);
@@ -56,6 +91,16 @@ li:first-child {
 
 li:last-child {
     border-radius : 0 5px 5px 0;
+}
+
+h1 {
+    border: 6px solid rgba(255,200,200,0.5);
+    background:rgba(255,200,200,0.5);
+    border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+    padding: 4%;
+    width: 50%;
+    margin: 10px;
+    color:rgba(255,200,200,0.5);
 }
 
 a.design {
@@ -184,3 +229,42 @@ a.main_menu:after {
     text-decoration: none;
     transition   : all .4s;
 }
+
+.bgColorBlack {
+    background-color:rgba(100,100,100,0.8);
+}
+.textColorBlack {
+    color: rgba(0,0,0,0.8);
+}
+.bgColorBlue {
+    background-color:rgba(200,200,255,0.8);
+}
+.textColorBlue {
+    color: rgba(100,100,200,0.8);
+}
+.bgColorPink {
+    background-color:rgba(255,230,230,0.8);
+}
+.textColorPink {
+    color: rgba(200,150,150,0.8);
+}
+.bgColorRed {
+    background-color:rgba(250,200,200,0.8);
+}
+.textColorRed {
+    color: rgba(200,100,100,0.8);
+}
+.bgColorYellow {
+    background-color:rgba(250,250,200,0.8);
+}
+.textColorYellow {
+    background-color:rgba(200,200,100,0.8);
+}
+.bgColorWhite {
+    background-color:rgba(255,255,255,0.8);
+}
+.textColorWhite {
+    background-color:rgba(200,200,200,0.8);
+}
+
+
